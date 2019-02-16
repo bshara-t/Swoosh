@@ -4,13 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.repoai.bshara.swoosh.Utillities.EXTRA_LEAGUE
+import com.repoai.bshara.swoosh.Model.Player
 import com.repoai.bshara.swoosh.R
+import com.repoai.bshara.swoosh.Utillities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
 
-    var selectedLeague = ""
+    var player = Player("","")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,9 +19,9 @@ class LeagueActivity : BaseActivity() {
     }
 
     fun setPointer(view: View) {
-        if (selectedLeague != "") {
+        if (player.league != "") {
             val skillIntent = Intent(this, SkillActivity::class.java)
-            skillIntent.putExtra(EXTRA_LEAGUE, selectedLeague)
+            skillIntent.putExtra(EXTRA_PLAYER, player)
             startActivity(skillIntent)
         } else {
             Toast.makeText(this, "Please chose a league.", Toast.LENGTH_SHORT).show()
@@ -33,9 +34,9 @@ class LeagueActivity : BaseActivity() {
         co_edLeagueBtn.isChecked = false
 
         if (mensLeagueBtn.isChecked) {
-            selectedLeague = "men"
+            player.league = "men"
         } else {
-            selectedLeague = ""
+            player.league = ""
         }
     }
 
@@ -44,9 +45,9 @@ class LeagueActivity : BaseActivity() {
         co_edLeagueBtn.isChecked = false
 
         if (womensLeagueBtn.isChecked) {
-            selectedLeague = "Women"
+            player.league = "Women"
         } else {
-            selectedLeague = ""
+            player.league = ""
         }
 
     }
@@ -56,9 +57,9 @@ class LeagueActivity : BaseActivity() {
         womensLeagueBtn.isChecked = false
 
         if (co_edLeagueBtn.isChecked) {
-            selectedLeague = "Co-Ed"
+            player.league = "Co-Ed"
         } else {
-            selectedLeague = ""
+            player.league = ""
         }
 
     }
