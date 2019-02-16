@@ -1,10 +1,11 @@
-package com.repoai.bshara.swoosh
+package com.repoai.bshara.swoosh.Controller
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.repoai.bshara.swoosh.Utillities.EXTRA_LEAGUE
+import com.repoai.bshara.swoosh.R
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
@@ -31,21 +32,35 @@ class LeagueActivity : BaseActivity() {
         womensLeagueBtn.isChecked = false
         co_edLeagueBtn.isChecked = false
 
-        selectedLeague = "men"
+        if (mensLeagueBtn.isChecked) {
+            selectedLeague = "men"
+        } else {
+            selectedLeague = ""
+        }
     }
 
     fun onWomensClicked(view: View) {
         mensLeagueBtn.isChecked = false
         co_edLeagueBtn.isChecked = false
 
-        selectedLeague = "Women"
+        if (womensLeagueBtn.isChecked) {
+            selectedLeague = "Women"
+        } else {
+            selectedLeague = ""
+        }
+
     }
 
     fun onCoEdClicked(view: View) {
         mensLeagueBtn.isChecked = false
         womensLeagueBtn.isChecked = false
 
-        selectedLeague = "Co-Ed"
+        if (co_edLeagueBtn.isChecked) {
+            selectedLeague = "Co-Ed"
+        } else {
+            selectedLeague = ""
+        }
+
     }
 
 }

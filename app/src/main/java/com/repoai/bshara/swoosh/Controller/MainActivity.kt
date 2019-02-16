@@ -1,8 +1,8 @@
-package com.repoai.bshara.swoosh
+package com.repoai.bshara.swoosh.Controller
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.repoai.bshara.swoosh.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {

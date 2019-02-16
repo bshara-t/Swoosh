@@ -1,4 +1,4 @@
-package com.repoai.bshara.swoosh
+package com.repoai.bshara.swoosh.Controller
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
