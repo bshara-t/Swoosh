@@ -14,6 +14,7 @@ class LeagueActivity : BaseActivity() {
 
     var player = Player("","")
 
+    //first method to get the landscape the right way
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
         outState?.putParcelable(EXTRA_PLAYER, player)
@@ -24,6 +25,7 @@ class LeagueActivity : BaseActivity() {
         setContentView(R.layout.activity_league)
     }
 
+    //to restore the state of the activity after the flip ( from portrait to landscape )
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
         if (savedInstanceState != null) {
